@@ -6,7 +6,7 @@ A simple QR Code scan solution with only system API and smooth animation.
 </p>
 
 ## Usage
-Copy the source code in the **/QRCodeScan** folder into your project, then use it like `UIViewController`. Check detail in Demo project.
+Copy the source code in the **/QRCodeScan** folder into your project, then use it like `UIViewController`. Please check details in Demo project.
 
 ## Customization
 The scan time interval, continuous scanning, scan window corner color and its frame could be customed.
