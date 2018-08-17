@@ -45,7 +45,7 @@
 
 #pragma mark - QRCodeScanViewControllerDelegate
 -(void)QRCodeScanViewController:(QRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode {
-    NSLog(@"Scaned:%@",qrCode);
+    NSLog(@"Scanned:%@",qrCode);
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"QRCode scanned:" message:qrCode preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
     [qrCodeScanViewController presentViewController:alertController animated:YES completion:nil];

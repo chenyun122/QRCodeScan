@@ -21,7 +21,7 @@ Copy the source code in the **/QRCodeScan** folder into your project, then use i
 ```Objective-C
 #pragma mark - QRCodeScanViewControllerDelegate
 -(void)QRCodeScanViewController:(QRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode {
-    NSLog(@"Scaned:%@",qrCode);
+    NSLog(@"QRCode Scanned:%@",qrCode);
 
     //Usually, we dismiss the QRCodeScanViewController after QRCode scanned
     [qrCodeScanViewController dismissViewControllerAnimated:YES completion:nil];
