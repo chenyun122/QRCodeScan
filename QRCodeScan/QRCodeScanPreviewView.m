@@ -40,9 +40,13 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    if (self.frame.size.width > self.frame.size.height) { //Set the frames only in vertical orientation.
+        return;
+    }
+    
     if (CGRectEqualToRect(self.scanWindowFrame,CGRectZero)) {
         CGFloat width = self.frame.size.width * 0.618;
-        self.scanWindowFrame = CGRectMake((self.frame.size.width - width)/2, (self.frame.size.height - width)/2 - 50, width, width); //Default scan window frame
+        self.scanWindowFrame = CGRectMake((self.frame.size.width - width) / 2, (self.frame.size.height - width) / 2 - 50, width, width); //Default scan window frame
     }
     
     [self frameChanged];
@@ -149,10 +153,10 @@
         barLayer.hidden = YES;
 
         [self.layer addSublayer:barLayer];
-        [self startScanAnimation];
     }
-    
+
     barLayer.frame = CGRectMake(self.scanWindowFrame.origin.x + self.scanWindowFrame.size.width * 0.1 / 2.0, self.scanWindowFrame.origin.y, self.scanWindowFrame.size.width * 0.9, 3.0);
+    [self startScanAnimation];
 }
 
 //Start the scan animation
@@ -164,7 +168,7 @@
     animation.repeatCount = CGFLOAT_MAX;
     animation.beginTime = CACurrentMediaTime() + 0.5;
     animation.fillMode = kCAFillModeRemoved;
-    [barLayer addAnimation:animation forKey:nil];
+    [barLayer addAnimation:animation forKey:@"VerticalMoving"];
     __weak CALayer *_barLayer = barLayer;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _barLayer.hidden = NO;

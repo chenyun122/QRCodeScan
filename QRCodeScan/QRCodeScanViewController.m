@@ -21,6 +21,7 @@
 @property (nonatomic,strong) AVCaptureDevice *videoDevice;
 @property (nonatomic,strong) AVCaptureVideoDataOutput *videoOutput;
 @property(nonatomic, weak) IBOutlet QRCodeScanPreviewView *previewView;
+@property(nonatomic, weak) IBOutlet UILabel *cautionLabel;
 
 @end
 
@@ -56,9 +57,37 @@ const static CGFloat kMinDetectionInterval = 0.3;
     [self setupCaptureSession];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self checkOrientationWithSize:self.view.frame.size];
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [self checkOrientationWithSize:size];
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)checkOrientationWithSize:(CGSize)size {
+    if (size.width < size.height) {
+        self.previewView.hidden = NO;
+        self.cautionLabel.hidden = YES;
+    }
+    else{
+        self.previewView.hidden = YES;
+        self.cautionLabel.hidden = NO;
+    }
 }
 
 

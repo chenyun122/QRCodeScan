@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRCodeScanViewController">
             <connections>
+                <outlet property="cautionLabel" destination="z8S-d9-CEV" id="htm-dR-IKZ"/>
                 <outlet property="previewView" destination="b0y-T7-m36" id="Vhr-uw-YdB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,12 +26,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available in vertical orientation only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8S-d9-CEV">
+                    <rect key="frame" x="53" y="323" width="268.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="b0y-T7-m36" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1wk-hX-RTA"/>
                 <constraint firstItem="b0y-T7-m36" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="HbY-kO-fyN"/>
+                <constraint firstItem="z8S-d9-CEV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OgN-71-nCu"/>
                 <constraint firstItem="b0y-T7-m36" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="UgT-nV-iz0"/>
+                <constraint firstItem="z8S-d9-CEV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iw1-wo-NLQ"/>
                 <constraint firstItem="b0y-T7-m36" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="jZq-ck-S8C"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
