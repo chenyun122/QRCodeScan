@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "QRCodeScanPreviewView.h"
 
+@class QRCodeScanViewController;
 @protocol QRCodeScanViewControllerDelegate <NSObject>
--(void)QRCodeDidScanned:(NSString *)qrCode;
+-(void)QRCodeScanViewController:(QRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode;
 @end
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		944B211C2126AD1A005F2D88 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944B211B2126AD1A005F2D88 /* Media.xcassets */; };
 		94C02CF221211C7C0028AB47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02CF121211C7C0028AB47 /* AppDelegate.m */; };
 		94C02CF521211C7C0028AB47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02CF421211C7C0028AB47 /* ViewController.m */; };
 		94C02CF821211C7C0028AB47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C02CF621211C7C0028AB47 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		944B211B2126AD1A005F2D88 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		94C02CED21211C7C0028AB47 /* QRCodeScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C02CF021211C7C0028AB47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94C02CF121211C7C0028AB47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				94C02D0721211CD70028AB47 /* QRCodeScanViewController.h */,
 				94C02D0821211CD70028AB47 /* QRCodeScanViewController.m */,
 				94C02D0921211CD70028AB47 /* QRCodeScanViewController.xib */,
+				944B211B2126AD1A005F2D88 /* Media.xcassets */,
 			);
 			path = QRCodeScan;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				944B211C2126AD1A005F2D88 /* Media.xcassets in Resources */,
 				94C02CFD21211C7D0028AB47 /* LaunchScreen.storyboard in Resources */,
 				94C02CFA21211C7D0028AB47 /* Assets.xcassets in Resources */,
 				94C02CF821211C7C0028AB47 /* Main.storyboard in Resources */,

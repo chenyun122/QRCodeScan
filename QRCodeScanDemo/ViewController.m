@@ -32,18 +32,26 @@
     scanViewController.continuous = YES;
     scanViewController.scanInterval = 1.5;
     scanViewController.delegate = self;
+    [self presentViewController:scanViewController animated:YES completion:nil];
+    
+    //Other customizations
     //scanViewController.scanWindowCornerColor = UIColor.redColor;
     //scanViewController.scanWindowFrame = CGRectMake(100, 100, 100, 100);
-    [self.navigationController pushViewController:scanViewController animated:YES];
+    
+    //Could be pushed by an UINavigationController
+    //[self.navigationController pushViewController:scanViewController animated:YES];
 }
 
 
 #pragma mark - QRCodeScanViewControllerDelegate
--(void)QRCodeDidScanned:(NSString *)qrCode {
+-(void)QRCodeScanViewController:(QRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode {
     NSLog(@"Scaned:%@",qrCode);
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"QRCode scanned:" message:qrCode preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [qrCodeScanViewController presentViewController:alertController animated:YES completion:nil];
+    
+    //Usually, we dismiss the QRCodeScanViewController after QRCode scanned, instead of displaying an alert.
+    //[qrCodeScanViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

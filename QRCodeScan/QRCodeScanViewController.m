@@ -22,6 +22,7 @@
 @property (nonatomic,strong) AVCaptureVideoDataOutput *videoOutput;
 @property(nonatomic, weak) IBOutlet QRCodeScanPreviewView *previewView;
 @property(nonatomic, weak) IBOutlet UILabel *cautionLabel;
+@property(nonatomic, weak) IBOutlet UIButton *backButton;
 
 @end
 
@@ -60,6 +61,10 @@ const static CGFloat kMinDetectionInterval = 0.3;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self checkOrientationWithSize:self.view.frame.size];
+    
+    if (self.isBeingPresented) {
+        self.backButton.hidden = NO;
+    }
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -170,15 +175,24 @@ const static CGFloat kMinDetectionInterval = 0.3;
 }
 
 
+#pragma mark - Actions
+- (IBAction)backAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 #pragma mark - Callback
 - (void)callbackWithCode:(NSString *)qrCode {
     lastCallbackTime = CFAbsoluteTimeGetCurrent();
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.delegate && [self.delegate respondsToSelector:@selector(QRCodeDidScanned:)]) {
-            [self.delegate QRCodeDidScanned:qrCode];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(QRCodeScanViewController:qrCodeDidScanned:)]) {
+            [self.delegate QRCodeScanViewController:self qrCodeDidScanned:qrCode];
         }
     });
 }
+
+
+
 
 
 @end
