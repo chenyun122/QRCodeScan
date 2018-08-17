@@ -8,8 +8,8 @@ A simple QR Code scan solution with only system API and smooth animation.
 ## Usage
 Copy the source code in the **/QRCodeScan** folder into your project, then use it like `UIViewController`. Please check details in Demo project.
 
-**Create the QRCodeScanViewController and present it:**
-```Objective-c
+**Create the `QRCodeScanViewController` and present it:**
+```Objective-C
     QRCodeScanViewController *scanViewController = [[QRCodeScanViewController alloc] init];
     scanViewController.continuous = YES;
     scanViewController.scanInterval = 1.5;
@@ -17,13 +17,13 @@ Copy the source code in the **/QRCodeScan** folder into your project, then use i
     [self presentViewController:scanViewController animated:YES completion:nil];
 ```
 
-**Handle the QRCode scaned:**
-```Objective-c
+**Handle the QRCode scanned:**
+```Objective-C
 #pragma mark - QRCodeScanViewControllerDelegate
 -(void)QRCodeScanViewController:(QRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode {
     NSLog(@"Scaned:%@",qrCode);
 
-    //Usually, we dismiss the QRCodeScanViewController after QRCode scanned, instead of displaying an alert.
+    //Usually, we dismiss the QRCodeScanViewController after QRCode scanned
     [qrCodeScanViewController dismissViewControllerAnimated:YES completion:nil];
 }
 ```
