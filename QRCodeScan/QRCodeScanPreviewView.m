@@ -232,7 +232,7 @@
     labelBelowScanWindow.text = self.textBelowScanWindow;
     [labelBelowScanWindow sizeToFit];
     labelBelowScanWindow.frame = CGRectMake(0, self.scanWindowFrame.origin.y + self.scanWindowFrame.size.height + _textBelowScanWindowMargin,
-                                            self.frame.size.width, labelAboveScanWindow.frame.size.height);
+                                            self.frame.size.width, labelBelowScanWindow.frame.size.height);
     labelBelowScanWindow.hidden = NO;
 }
 
