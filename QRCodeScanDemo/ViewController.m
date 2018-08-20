@@ -37,6 +37,8 @@
     //Other customizations
     //scanViewController.scanWindowCornerColor = UIColor.redColor;
     //scanViewController.scanWindowFrame = CGRectMake(100, 100, 100, 100);
+    //scanViewController.textAboveScanWindow = @"Scan QRcode";
+    //scanViewController.textAboveScanWindowMargin = 20.0;
     
     //Could be pushed by an UINavigationController
     //[self.navigationController pushViewController:scanViewController animated:YES];

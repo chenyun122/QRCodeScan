@@ -47,12 +47,12 @@ const static CGFloat kMinDetectionInterval = 0.3;
     detector =  [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy : CIDetectorAccuracyHigh}];
     
     //Set properties
-    if (self.scanWindowCornerColor != nil) {
-        self.previewView.scanWindowCornerColor = self.scanWindowCornerColor;
-    }
-    if (!CGRectEqualToRect(self.scanWindowFrame,CGRectZero)) {
-        self.previewView.scanWindowFrame = self.scanWindowFrame;
-    }
+    if (self.scanWindowCornerColor != nil) { self.previewView.scanWindowCornerColor = self.scanWindowCornerColor; }
+    if (!CGRectEqualToRect(self.scanWindowFrame,CGRectZero)) { self.previewView.scanWindowFrame = self.scanWindowFrame; }
+    if (self.textAboveScanWindow != nil) { self.previewView.textAboveScanWindow = self.textAboveScanWindow; }
+    if (ABS(self.textAboveScanWindowMargin - 0.0) > 0.0001) { self.previewView.textAboveScanWindowMargin = self.textAboveScanWindowMargin; }
+    if (self.textBelowScanWindow != nil) { self.previewView.textBelowScanWindow = self.textBelowScanWindow; }
+    if (ABS(self.textBelowScanWindowMargin - 0.0) > 0.0001) { self.previewView.textBelowScanWindowMargin = self.textBelowScanWindowMargin; }
     
     //Start videos
     [self setupCaptureSession];
@@ -85,7 +85,7 @@ const static CGFloat kMinDetectionInterval = 0.3;
 }
 
 - (void)checkOrientationWithSize:(CGSize)size {
-    if (size.width < size.height) {
+    if (size.width <= size.height) {
         self.previewView.hidden = NO;
         self.cautionLabel.hidden = YES;
     }
@@ -105,6 +105,26 @@ const static CGFloat kMinDetectionInterval = 0.3;
 -(void)setScanWindowCornerColor:(UIColor *)scanWindowCornerColor {
     _scanWindowCornerColor = scanWindowCornerColor;
     self.previewView.scanWindowCornerColor = scanWindowCornerColor;
+}
+
+-(void)setTextAboveScanWindow:(NSString *)textAboveScanWindow {
+    _textAboveScanWindow = textAboveScanWindow;
+    self.previewView.textAboveScanWindow = textAboveScanWindow;
+}
+
+-(void)setTextAboveScanWindowMargin:(CGFloat)margin {
+    _textAboveScanWindowMargin = margin;
+    self.previewView.textAboveScanWindowMargin = margin;
+}
+
+-(void)setTextBelowScanWindow:(NSString *)textBelowScanWindow {
+    _textBelowScanWindow = textBelowScanWindow;
+    self.previewView.textBelowScanWindow = textBelowScanWindow;
+}
+
+-(void)setTextBelowScanWindowMargin:(CGFloat)margin {
+    _textBelowScanWindowMargin = margin;
+    self.previewView.textBelowScanWindowMargin = margin;
 }
 
 

@@ -14,6 +14,8 @@
     NSArray<CALayer *> *cornerLayers;
     CAShapeLayer *scanWindowCornerLayer;
     CALayer *barLayer;
+    UILabel *labelAboveScanWindow;
+    UILabel *labelBelowScanWindow;
 }
 
 @end
@@ -33,6 +35,7 @@
     [super awakeFromNib];
     
     _scanWindowCornerColor = [UIColor colorWithRed:25.0/255.0 green:201.0/255.0 blue:152.0/255.0 alpha:1.0]; //Default light green color
+    _textAboveScanWindowMargin = _textBelowScanWindowMargin = 40.0;
     
     [self addShadeLayers];
 }
@@ -64,6 +67,26 @@
     scanWindowCornerLayer.strokeColor = self.scanWindowCornerColor.CGColor;
 }
 
+-(void)setTextAboveScanWindow:(NSString *)textAboveScanWindow {
+    _textAboveScanWindow = textAboveScanWindow;
+    [self refreshLabelAboveScanWindow];
+}
+
+-(void)setTextAboveScanWindowMargin:(CGFloat)margin {
+    _textAboveScanWindowMargin = margin;
+    [self refreshLabelAboveScanWindow];
+}
+
+-(void)setTextBelowScanWindow:(NSString *)textBelowScanWindow {
+    _textBelowScanWindow = textBelowScanWindow;
+    [self refreshLabelBelowScanWindow];
+}
+
+-(void)setTextBelowScanWindowMargin:(CGFloat)margin {
+    _textBelowScanWindowMargin = margin;
+    [self refreshLabelBelowScanWindow];
+}
+
 
 #pragma mark - Layers handling
 //All sublayers need to be refresh after the view's frame changed.
@@ -71,6 +94,8 @@
     [self refreshShadeLayers];
     [self refreshScanWindowCornerLayer];
     [self refreshBarLayer];
+    [self refreshLabelAboveScanWindow];
+    [self refreshLabelBelowScanWindow];
 }
 
 //Add four shade layers to cover the area except for center scan window.
@@ -173,6 +198,42 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _barLayer.hidden = NO;
     });
+}
+
+
+#pragma mark - SubViews handling
+-(void)refreshLabelAboveScanWindow {
+    if (self.textAboveScanWindow != nil && labelAboveScanWindow == nil) {
+        labelAboveScanWindow = [[UILabel alloc] init];
+        labelAboveScanWindow.textColor = UIColor.whiteColor;
+        labelAboveScanWindow.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:labelAboveScanWindow];
+    }
+    
+    labelAboveScanWindow.hidden = YES;
+    labelAboveScanWindow.frame = CGRectMake(0, 0, self.frame.size.width, CGFLOAT_MAX);
+    labelAboveScanWindow.text = self.textAboveScanWindow;
+    [labelAboveScanWindow sizeToFit];
+    labelAboveScanWindow.frame = CGRectMake(0, self.scanWindowFrame.origin.y - labelAboveScanWindow.frame.size.height - _textAboveScanWindowMargin,
+                                            self.frame.size.width, labelAboveScanWindow.frame.size.height);
+    labelAboveScanWindow.hidden = NO;
+}
+
+-(void)refreshLabelBelowScanWindow {
+    if (self.textBelowScanWindow != nil && labelBelowScanWindow == nil) {
+        labelBelowScanWindow = [[UILabel alloc] init];
+        labelBelowScanWindow.textColor = UIColor.whiteColor;
+        labelBelowScanWindow.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:labelBelowScanWindow];
+    }
+    
+    labelBelowScanWindow.hidden = YES;
+    labelBelowScanWindow.frame = CGRectMake(0, 0, self.frame.size.width, CGFLOAT_MAX);
+    labelBelowScanWindow.text = self.textBelowScanWindow;
+    [labelBelowScanWindow sizeToFit];
+    labelBelowScanWindow.frame = CGRectMake(0, self.scanWindowFrame.origin.y + self.scanWindowFrame.size.height + _textBelowScanWindowMargin,
+                                            self.frame.size.width, labelAboveScanWindow.frame.size.height);
+    labelBelowScanWindow.hidden = NO;
 }
 
 @end

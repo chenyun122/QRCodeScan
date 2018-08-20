@@ -24,5 +24,9 @@
 
 @property (nonatomic, strong) UIColor *scanWindowCornerColor;
 @property (nonatomic, assign) CGRect scanWindowFrame;
+@property (nonatomic, copy) NSString *textAboveScanWindow;
+@property (nonatomic, assign) CGFloat textAboveScanWindowMargin;
+@property (nonatomic, copy) NSString *textBelowScanWindow;
+@property (nonatomic, assign) CGFloat textBelowScanWindowMargin;
 
 @end
