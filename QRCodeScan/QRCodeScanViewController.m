@@ -53,9 +53,7 @@ const static CGFloat kMinDetectionInterval = 0.3;
     if (ABS(self.textAboveScanWindowMargin - 0.0) > 0.0001) { self.previewView.textAboveScanWindowMargin = self.textAboveScanWindowMargin; }
     if (self.textBelowScanWindow != nil) { self.previewView.textBelowScanWindow = self.textBelowScanWindow; }
     if (ABS(self.textBelowScanWindowMargin - 0.0) > 0.0001) { self.previewView.textBelowScanWindowMargin = self.textBelowScanWindowMargin; }
-    
-    //Start videos
-    [self setupCaptureSession];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,6 +62,11 @@ const static CGFloat kMinDetectionInterval = 0.3;
     
     if (self.isBeingPresented) {
         self.backButton.hidden = NO;
+    }
+    
+    //Check camera authorization and start videos if it's authorized
+    if (self.videoDevice == nil) {
+        [self checkAuthorization];
     }
 }
 
@@ -192,6 +195,39 @@ const static CGFloat kMinDetectionInterval = 0.3;
             }
         }
     }
+}
+
+- (void)checkAuthorization{
+    NSString *mediaType = AVMediaTypeVideo;
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+    if(authStatus == AVAuthorizationStatusAuthorized) {
+        [self setupCaptureSession];
+    }
+    else if(authStatus == AVAuthorizationStatusDenied){
+        [self showNoCameraAccess];
+    }
+    else if(authStatus == AVAuthorizationStatusNotDetermined){
+        __weak typeof(self) weakSelf = self;
+        NSString *mediaType = AVMediaTypeVideo;
+        [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
+            if (granted) {
+                dispatch_async (dispatch_get_main_queue(), ^{
+                    [weakSelf setupCaptureSession];
+                });
+            }
+            else{
+                [weakSelf showNoCameraAccess];
+            }
+        }];
+    }
+}
+
+- (void)showNoCameraAccess {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"No camera access",nil)
+                                                                             message:NSLocalizedString(@"Please enable the access in System Settings",nil)
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 

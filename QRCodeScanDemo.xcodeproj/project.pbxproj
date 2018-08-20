@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		944B211C2126AD1A005F2D88 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944B211B2126AD1A005F2D88 /* Media.xcassets */; };
+		9475105F212AC43500905701 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94751061212AC43500905701 /* Localizable.strings */; };
 		94C02CF221211C7C0028AB47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02CF121211C7C0028AB47 /* AppDelegate.m */; };
 		94C02CF521211C7C0028AB47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02CF421211C7C0028AB47 /* ViewController.m */; };
 		94C02CF821211C7C0028AB47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C02CF621211C7C0028AB47 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		944B211B2126AD1A005F2D88 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		94751063212AC4C700905701 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		94C02CED21211C7C0028AB47 /* QRCodeScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C02CF021211C7C0028AB47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94C02CF121211C7C0028AB47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				94C02D0821211CD70028AB47 /* QRCodeScanViewController.m */,
 				94C02D0921211CD70028AB47 /* QRCodeScanViewController.xib */,
 				944B211B2126AD1A005F2D88 /* Media.xcassets */,
+				94751061212AC43500905701 /* Localizable.strings */,
 			);
 			path = QRCodeScan;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 94C02CE421211C7C0028AB47;
 			productRefGroup = 94C02CEE21211C7C0028AB47 /* Products */;
@@ -153,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				944B211C2126AD1A005F2D88 /* Media.xcassets in Resources */,
+				9475105F212AC43500905701 /* Localizable.strings in Resources */,
 				94C02CFD21211C7D0028AB47 /* LaunchScreen.storyboard in Resources */,
 				94C02CFA21211C7D0028AB47 /* Assets.xcassets in Resources */,
 				94C02CF821211C7C0028AB47 /* Main.storyboard in Resources */,
@@ -178,6 +183,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		94751061212AC43500905701 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94751063212AC4C700905701 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		94C02CF621211C7C0028AB47 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -201,6 +214,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -259,6 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
