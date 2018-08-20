@@ -15,6 +15,15 @@ Copy the source code in the **/QRCodeScan** folder into your project, then use i
     scanViewController.scanInterval = 1.5;
     scanViewController.delegate = self;
     [self presentViewController:scanViewController animated:YES completion:nil];
+
+    //Other customizations
+    //scanViewController.scanWindowCornerColor = UIColor.redColor;
+    //scanViewController.scanWindowFrame = CGRectMake(100, 100, 100, 100);
+    //scanViewController.textAboveScanWindow = @"Scan QRcode";
+    //scanViewController.textAboveScanWindowMargin = 20.0;
+    
+    //Could be pushed by an UINavigationController
+    //[self.navigationController pushViewController:scanViewController animated:YES];
 ```
 
 **Handle the QRCode scanned:**
