@@ -19,6 +19,8 @@
 @property (nonatomic, copy) NSString *textBelowScanWindow;
 @property (nonatomic, assign) CGFloat textBelowScanWindowMargin;
 
+-(void)startScanAnimation;
+
 @end
 
 

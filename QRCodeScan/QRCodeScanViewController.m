@@ -66,7 +66,9 @@ const static CGFloat kMinDetectionInterval = 0.3;
     
     //Check camera authorization and start videos if it's authorized
     if (self.videoDevice == nil) {
-        [self checkAuthorization];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^{
+            [self checkAuthorization];
+        });
     }
 }
 
@@ -167,13 +169,15 @@ const static CGFloat kMinDetectionInterval = 0.3;
     [self.videoOutput setSampleBufferDelegate:self queue:queue];
     [session addOutput:self.videoOutput];
 
-
     [session commitConfiguration];
     
     self.captureSession = session;
-    self.previewView.videoPreviewLayer.session = session;
-    
     [session startRunning];
+    
+    dispatch_async (dispatch_get_main_queue(), ^{
+        self.previewView.videoPreviewLayer.session = session;
+        [self.previewView startScanAnimation];
+    });
 }
 
 - (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
@@ -204,7 +208,9 @@ const static CGFloat kMinDetectionInterval = 0.3;
         [self setupCaptureSession];
     }
     else if(authStatus == AVAuthorizationStatusDenied){
-        [self showNoCameraAccess];
+        dispatch_async (dispatch_get_main_queue(), ^{
+            [self showNoCameraAccess];
+        });
     }
     else if(authStatus == AVAuthorizationStatusNotDetermined){
         __weak typeof(self) weakSelf = self;
@@ -216,7 +222,9 @@ const static CGFloat kMinDetectionInterval = 0.3;
                 });
             }
             else{
-                [weakSelf showNoCameraAccess];
+                dispatch_async (dispatch_get_main_queue(), ^{
+                    [weakSelf showNoCameraAccess];
+                });
             }
         }];
     }

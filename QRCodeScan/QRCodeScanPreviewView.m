@@ -181,7 +181,6 @@
     }
 
     barLayer.frame = CGRectMake(self.scanWindowFrame.origin.x + self.scanWindowFrame.size.width * 0.1 / 2.0, self.scanWindowFrame.origin.y, self.scanWindowFrame.size.width * 0.9, 3.0);
-    [self startScanAnimation];
 }
 
 //Start the scan animation
