@@ -217,9 +217,7 @@ const static CGFloat kMinDetectionInterval = 0.3;
         NSString *mediaType = AVMediaTypeVideo;
         [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
             if (granted) {
-                dispatch_async (dispatch_get_main_queue(), ^{
-                    [weakSelf setupCaptureSession];
-                });
+                [weakSelf setupCaptureSession];
             }
             else{
                 dispatch_async (dispatch_get_main_queue(), ^{
