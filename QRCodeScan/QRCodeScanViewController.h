@@ -18,9 +18,9 @@
 
 @interface QRCodeScanViewController : UIViewController
 
-@property(nonatomic, weak) id<QRCodeScanViewControllerDelegate> delegate;
-@property(nonatomic, assign) BOOL continuous;
-@property(nonatomic, assign) NSTimeInterval scanInterval;
+@property (nonatomic, weak) id<QRCodeScanViewControllerDelegate> delegate;
+@property (nonatomic, assign) BOOL continuous;
+@property (nonatomic, assign) NSTimeInterval scanInterval;
 
 @property (nonatomic, strong) UIColor *scanWindowCornerColor;
 @property (nonatomic, assign) CGRect scanWindowFrame;

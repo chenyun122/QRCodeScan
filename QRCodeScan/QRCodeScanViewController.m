@@ -20,9 +20,9 @@
 @property (nonatomic,strong) AVCaptureSession *captureSession;
 @property (nonatomic,strong) AVCaptureDevice *videoDevice;
 @property (nonatomic,strong) AVCaptureVideoDataOutput *videoOutput;
-@property(nonatomic, weak) IBOutlet QRCodeScanPreviewView *previewView;
-@property(nonatomic, weak) IBOutlet UILabel *cautionLabel;
-@property(nonatomic, weak) IBOutlet UIButton *backButton;
+@property (nonatomic, weak) IBOutlet QRCodeScanPreviewView *previewView;
+@property (nonatomic, weak) IBOutlet UILabel *cautionLabel;
+@property (nonatomic, weak) IBOutlet UIButton *backButton;
 
 @end
 
