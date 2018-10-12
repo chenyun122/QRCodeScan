@@ -29,4 +29,6 @@
 @property (nonatomic, copy) NSString *textBelowScanWindow;
 @property (nonatomic, assign) CGFloat textBelowScanWindowMargin;
 
+@property (nonatomic, weak) IBOutlet UIButton *flashLightButton;
+
 @end

@@ -242,6 +242,23 @@ const static CGFloat kMinDetectionInterval = 0.3;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)flashlightAction:(id)sender {
+    AVCaptureDevice *flashLight = self.videoDevice;
+    if ([flashLight isTorchAvailable] && [flashLight isTorchModeSupported:AVCaptureTorchModeOn]) {
+        BOOL success = [flashLight lockForConfiguration:nil];
+        if (success) {
+            self.flashLightButton.selected = !self.flashLightButton.selected;
+            if (self.flashLightButton.selected) {
+                [flashLight setTorchMode:AVCaptureTorchModeOn];
+            }
+            else{
+                [flashLight setTorchMode:AVCaptureTorchModeOff];
+            }
+            [flashLight unlockForConfiguration];
+        }
+    }
+}
+
 
 #pragma mark - Callback
 - (void)callbackWithCode:(NSString *)qrCode {

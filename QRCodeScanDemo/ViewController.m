@@ -32,6 +32,9 @@
     scanViewController.continuous = YES;
     scanViewController.scanInterval = 1.5;
     scanViewController.delegate = self;
+    scanViewController.textAboveScanWindow = @"A Title Here";
+    scanViewController.textAboveScanWindowMargin = 70;
+    scanViewController.textBelowScanWindow = @"Some descriptions";
     [self presentViewController:scanViewController animated:YES completion:nil];
     
     //Other customizations
@@ -39,6 +42,10 @@
     //scanViewController.scanWindowFrame = CGRectMake(100, 100, 100, 100);
     //scanViewController.textAboveScanWindow = @"Scan QRcode";
     //scanViewController.textAboveScanWindowMargin = 20.0;
+    
+    //Change flashlight button's image
+    //[scanViewController.flashLightButton setImage:[UIImage imageNamed:@"AnotherImage"] forState:UIControlStateNormal];
+    //[scanViewController.flashLightButton setImage:[UIImage imageNamed:@"AnotherSelectedImage"] forState:UIControlStateSelected];
     
     //Could be pushed by an UINavigationController
     //[self.navigationController pushViewController:scanViewController animated:YES];
