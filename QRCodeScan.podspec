@@ -9,11 +9,13 @@ Pod::Spec.new do |s|
   s.screenshots  = "https://github.com/chenyun122/QRCodeScan/raw/master/Screenshots/QRCodeScan.gif?raw=true"
   s.license      = "MIT"
   s.author             = { "Yun CHEN" => "chenyun122@gmail.com" }
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
+  s.ios.deployment_target = '11.4'
   s.requires_arc = true
   s.source       = { :git => "https://github.com/chenyun122/QRCodeScan.git", :tag => "#{s.version}" }
-  s.source_files  = "QRCodeScan", "QRCodeScan/**/*.{h,m}"
+  s.source_files = "QRCodeScan", "QRCodeScan/**/*.{h,m}"
+  s.resources    = "QRCodeScan/**/*.{xib,nib,storyboard,png}"
   s.resource_bundles = {
-    'QRCodeScan' => ['QRCodeScan/**/*.xcassets']
+    'QRCodeScan' => ['QRCodeScan/**/*.xcassets','QRCodeScan/*.lproj/*']
   }
 end

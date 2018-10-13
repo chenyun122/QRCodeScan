@@ -232,10 +232,10 @@ const static CGFloat kMinDetectionInterval = 0.3;
 }
 
 - (void)showNoCameraAccess {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"No camera access",nil)
-                                                                             message:NSLocalizedString(@"Please enable the access in System Settings",nil)
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[self localizedString:@"No camera access"]
+                                                                             message:[self localizedString:@"Please enable the access in System Settings"]
                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+    [alertController addAction:[UIAlertAction actionWithTitle:[self localizedString:@"OK"] style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -291,5 +291,18 @@ const static CGFloat kMinDetectionInterval = 0.3;
     return image;
 }
 
+- (NSString *)localizedString:(NSString *)key{
+    NSString *string = NSLocalizedString(key,nil);
+    if (string == nil) {
+        NSBundle *bundle = [NSBundle bundleForClass:[QRCodeScanViewController class]];
+        NSURL *url = [bundle URLForResource:@"QRCodeScan" withExtension:@"bundle"];
+        if (url != nil) {
+            NSBundle *bundleWithUrl = [NSBundle bundleWithURL:url];
+            string = NSLocalizedStringFromTableInBundle(key, @"QRCodeScan", bundleWithUrl, nil);
+        }
+    }
+    
+    return string;
+}
 
 @end
