@@ -54,6 +54,9 @@ const static CGFloat kMinDetectionInterval = 0.3;
     if (self.textBelowScanWindow != nil) { self.previewView.textBelowScanWindow = self.textBelowScanWindow; }
     if (ABS(self.textBelowScanWindowMargin - 0.0) > 0.0001) { self.previewView.textBelowScanWindowMargin = self.textBelowScanWindowMargin; }
 
+    //Set images for Pods
+    [self.backButton setImage:[self imageNamed:@"back"] forState:UIControlStateNormal];
+    [self.flashLightButton setImage:[self imageNamed:@"ios-flashlight"] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -271,7 +274,22 @@ const static CGFloat kMinDetectionInterval = 0.3;
 }
 
 
-
+#pragma mark - Private functions
+- (UIImage *)imageNamed:(NSString *)imageName {
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    //For Pods bundle
+    if (image == nil) {
+        NSBundle *bundle = [NSBundle bundleForClass:[QRCodeScanViewController class]];
+        NSURL *url = [bundle URLForResource:@"QRCodeScan" withExtension:@"bundle"];
+        if (url != nil) {
+            NSBundle *bundleWithUrl = [NSBundle bundleWithURL:url];
+            image = [UIImage imageNamed:imageName inBundle:bundleWithUrl compatibleWithTraitCollection:nil];
+        }
+    }
+    
+    return image;
+}
 
 
 @end
