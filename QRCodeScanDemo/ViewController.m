@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "QRCodeScanViewController.h"
+#import "CYQRCodeScanViewController.h"
 
-@interface ViewController () <QRCodeScanViewControllerDelegate>
+@interface ViewController () <CYQRCodeScanViewControllerDelegate>
 
 @end
 
@@ -28,7 +28,7 @@
 
 
 - (IBAction)scan:(id)sender {
-    QRCodeScanViewController *scanViewController = [QRCodeScanViewController qrcodeScanViewController];
+    CYQRCodeScanViewController *scanViewController = [CYQRCodeScanViewController qrcodeScanViewController];
     scanViewController.continuous = YES;
     scanViewController.scanInterval = 1.5;
     scanViewController.delegate = self;
@@ -53,7 +53,7 @@
 
 
 #pragma mark - QRCodeScanViewControllerDelegate
--(void)QRCodeScanViewController:(QRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode {
+-(void)CYQRCodeScanViewController:(CYQRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode {
     NSLog(@"Scanned:%@",qrCode);
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"QRCode scanned:" message:qrCode preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];

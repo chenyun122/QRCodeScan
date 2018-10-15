@@ -9,7 +9,7 @@
 @import UIKit;
 @import AVFoundation;
 
-@interface QRCodeScanPreviewView : UIView
+@interface CYQRCodeScanPreviewView : UIView
 
 @property (nonatomic, readonly) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, assign) CGRect scanWindowFrame;

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRCodeScanViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CYQRCodeScanViewController">
             <connections>
                 <outlet property="backButton" destination="dPx-5l-kK8" id="qLW-QI-hZo"/>
                 <outlet property="cautionLabel" destination="z8S-d9-CEV" id="htm-dR-IKZ"/>
@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0y-T7-m36" customClass="QRCodeScanPreviewView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0y-T7-m36" customClass="CYQRCodeScanPreviewView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -39,7 +39,7 @@
                         <constraint firstAttribute="width" constant="50" id="EvG-CE-ndt"/>
                         <constraint firstAttribute="height" constant="50" id="Fqi-vd-MHC"/>
                     </constraints>
-                    <state key="normal" image="ios-flashlight"/>
+                    <state key="normal" image="CYQRCodeScanFlashlight"/>
                     <connections>
                         <action selector="flashlightAction:" destination="-1" eventType="touchUpInside" id="ofZ-fW-6QS"/>
                     </connections>
@@ -50,7 +50,7 @@
                         <constraint firstAttribute="height" constant="30" id="AZq-ys-hF7"/>
                         <constraint firstAttribute="width" constant="50" id="Wi9-cu-eNs"/>
                     </constraints>
-                    <state key="normal" image="back"/>
+                    <state key="normal" image="CYQRCodeScanBack"/>
                     <connections>
                         <action selector="backAction:" destination="-1" eventType="touchUpInside" id="kGx-h2-3TK"/>
                     </connections>
@@ -72,7 +72,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="27" height="27"/>
-        <image name="ios-flashlight" width="39" height="39"/>
+        <image name="CYQRCodeScanBack" width="27" height="27"/>
+        <image name="CYQRCodeScanFlashlight" width="39" height="39"/>
     </resources>
 </document>

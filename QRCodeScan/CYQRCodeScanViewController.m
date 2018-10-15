@@ -7,10 +7,10 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
-#import "QRCodeScanViewController.h"
+#import "CYQRCodeScanViewController.h"
 
 
-@interface QRCodeScanViewController () <AVCaptureVideoDataOutputSampleBufferDelegate> {
+@interface CYQRCodeScanViewController () <AVCaptureVideoDataOutputSampleBufferDelegate> {
     CFAbsoluteTime lastDetectionTime;
     CFAbsoluteTime lastCallbackTime;
     CIDetector *detector;
@@ -20,19 +20,19 @@
 @property (nonatomic,strong) AVCaptureSession *captureSession;
 @property (nonatomic,strong) AVCaptureDevice *videoDevice;
 @property (nonatomic,strong) AVCaptureVideoDataOutput *videoOutput;
-@property (nonatomic, weak) IBOutlet QRCodeScanPreviewView *previewView;
+@property (nonatomic, weak) IBOutlet CYQRCodeScanPreviewView *previewView;
 @property (nonatomic, weak) IBOutlet UILabel *cautionLabel;
 @property (nonatomic, weak) IBOutlet UIButton *backButton;
 
 @end
 
-@implementation QRCodeScanViewController
+@implementation CYQRCodeScanViewController
 
 const static CGFloat kMinDetectionInterval = 0.3;
 
 + (instancetype)qrcodeScanViewController {
-    NSBundle *bundle = [NSBundle bundleForClass:[QRCodeScanViewController class]];
-    QRCodeScanViewController *qrcodeScanViewController = [[QRCodeScanViewController alloc] initWithNibName:@"QRCodeScanViewController" bundle:bundle];
+    NSBundle *bundle = [NSBundle bundleForClass:[CYQRCodeScanViewController class]];
+    CYQRCodeScanViewController *qrcodeScanViewController = [[CYQRCodeScanViewController alloc] initWithNibName:@"CYQRCodeScanViewController" bundle:bundle];
     return qrcodeScanViewController;
 }
 
@@ -61,8 +61,8 @@ const static CGFloat kMinDetectionInterval = 0.3;
     if (ABS(self.textBelowScanWindowMargin - 0.0) > 0.0001) { self.previewView.textBelowScanWindowMargin = self.textBelowScanWindowMargin; }
 
     //Set images for Pods
-    [self.backButton setImage:[self imageNamed:@"back"] forState:UIControlStateNormal];
-    [self.flashLightButton setImage:[self imageNamed:@"ios-flashlight"] forState:UIControlStateNormal];
+    [self.backButton setImage:[self imageNamed:@"CYQRCodeScanBack"] forState:UIControlStateNormal];
+    [self.flashLightButton setImage:[self imageNamed:@"CYQRCodeScanFlashlight"] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -273,8 +273,8 @@ const static CGFloat kMinDetectionInterval = 0.3;
 - (void)callbackWithCode:(NSString *)qrCode {
     lastCallbackTime = CFAbsoluteTimeGetCurrent();
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.delegate && [self.delegate respondsToSelector:@selector(QRCodeScanViewController:qrCodeDidScanned:)]) {
-            [self.delegate QRCodeScanViewController:self qrCodeDidScanned:qrCode];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(CYQRCodeScanViewController:qrCodeDidScanned:)]) {
+            [self.delegate CYQRCodeScanViewController:self qrCodeDidScanned:qrCode];
         }
     });
 }
@@ -286,7 +286,7 @@ const static CGFloat kMinDetectionInterval = 0.3;
     
     //For Pods bundle
     if (image == nil) {
-        NSBundle *bundle = [NSBundle bundleForClass:[QRCodeScanViewController class]];
+        NSBundle *bundle = [NSBundle bundleForClass:[CYQRCodeScanViewController class]];
         NSURL *url = [bundle URLForResource:@"QRCodeScan" withExtension:@"bundle"];
         if (url != nil) {
             NSBundle *bundleWithUrl = [NSBundle bundleWithURL:url];
@@ -300,7 +300,7 @@ const static CGFloat kMinDetectionInterval = 0.3;
 - (NSString *)localizedString:(NSString *)key{
     NSString *string = NSLocalizedString(key,nil);
     if (string == nil) {
-        NSBundle *bundle = [NSBundle bundleForClass:[QRCodeScanViewController class]];
+        NSBundle *bundle = [NSBundle bundleForClass:[CYQRCodeScanViewController class]];
         NSURL *url = [bundle URLForResource:@"QRCodeScan" withExtension:@"bundle"];
         if (url != nil) {
             NSBundle *bundleWithUrl = [NSBundle bundleWithURL:url];

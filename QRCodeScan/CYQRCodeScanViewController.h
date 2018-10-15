@@ -7,18 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QRCodeScanPreviewView.h"
+#import "CYQRCodeScanPreviewView.h"
 
-@class QRCodeScanViewController;
-@protocol QRCodeScanViewControllerDelegate <NSObject>
--(void)QRCodeScanViewController:(QRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode;
+@class CYQRCodeScanViewController;
+@protocol CYQRCodeScanViewControllerDelegate <NSObject>
+-(void)CYQRCodeScanViewController:(CYQRCodeScanViewController *)qrCodeScanViewController qrCodeDidScanned:(NSString *)qrCode;
 @end
 
 
 
-@interface QRCodeScanViewController : UIViewController
+@interface CYQRCodeScanViewController : UIViewController
 
-@property (nonatomic, weak) id<QRCodeScanViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<CYQRCodeScanViewControllerDelegate> delegate;
 @property (nonatomic, assign) BOOL continuous;
 @property (nonatomic, assign) NSTimeInterval scanInterval;
 

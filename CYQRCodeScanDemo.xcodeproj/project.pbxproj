@@ -15,15 +15,15 @@
 		94C02CFA21211C7D0028AB47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C02CF921211C7D0028AB47 /* Assets.xcassets */; };
 		94C02CFD21211C7D0028AB47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C02CFB21211C7D0028AB47 /* LaunchScreen.storyboard */; };
 		94C02D0021211C7D0028AB47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02CFF21211C7D0028AB47 /* main.m */; };
-		94C02D0A21211CD70028AB47 /* QRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02D0821211CD70028AB47 /* QRCodeScanViewController.m */; };
-		94C02D0B21211CD70028AB47 /* QRCodeScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C02D0921211CD70028AB47 /* QRCodeScanViewController.xib */; };
-		94C02D0E21215D340028AB47 /* QRCodeScanPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02D0C21215D340028AB47 /* QRCodeScanPreviewView.m */; };
+		94C02D0A21211CD70028AB47 /* CYQRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02D0821211CD70028AB47 /* CYQRCodeScanViewController.m */; };
+		94C02D0B21211CD70028AB47 /* CYQRCodeScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C02D0921211CD70028AB47 /* CYQRCodeScanViewController.xib */; };
+		94C02D0E21215D340028AB47 /* CYQRCodeScanPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C02D0C21215D340028AB47 /* CYQRCodeScanPreviewView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		944B211B2126AD1A005F2D88 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		94751063212AC4C700905701 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		94C02CED21211C7C0028AB47 /* QRCodeScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94C02CED21211C7C0028AB47 /* CYQRCodeScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYQRCodeScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C02CF021211C7C0028AB47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94C02CF121211C7C0028AB47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		94C02CF321211C7C0028AB47 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -33,11 +33,11 @@
 		94C02CFC21211C7D0028AB47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94C02CFE21211C7D0028AB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C02CFF21211C7D0028AB47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		94C02D0721211CD70028AB47 /* QRCodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeScanViewController.h; sourceTree = "<group>"; };
-		94C02D0821211CD70028AB47 /* QRCodeScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanViewController.m; sourceTree = "<group>"; };
-		94C02D0921211CD70028AB47 /* QRCodeScanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeScanViewController.xib; sourceTree = "<group>"; };
-		94C02D0C21215D340028AB47 /* QRCodeScanPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanPreviewView.m; sourceTree = "<group>"; };
-		94C02D0D21215D340028AB47 /* QRCodeScanPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScanPreviewView.h; sourceTree = "<group>"; };
+		94C02D0721211CD70028AB47 /* CYQRCodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYQRCodeScanViewController.h; sourceTree = "<group>"; };
+		94C02D0821211CD70028AB47 /* CYQRCodeScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYQRCodeScanViewController.m; sourceTree = "<group>"; };
+		94C02D0921211CD70028AB47 /* CYQRCodeScanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CYQRCodeScanViewController.xib; sourceTree = "<group>"; };
+		94C02D0C21215D340028AB47 /* CYQRCodeScanPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYQRCodeScanPreviewView.m; sourceTree = "<group>"; };
+		94C02D0D21215D340028AB47 /* CYQRCodeScanPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYQRCodeScanPreviewView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		94C02CEE21211C7C0028AB47 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94C02CED21211C7C0028AB47 /* QRCodeScanDemo.app */,
+				94C02CED21211C7C0028AB47 /* CYQRCodeScanDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,11 +87,11 @@
 		94C02D0621211CA80028AB47 /* QRCodeScan */ = {
 			isa = PBXGroup;
 			children = (
-				94C02D0D21215D340028AB47 /* QRCodeScanPreviewView.h */,
-				94C02D0C21215D340028AB47 /* QRCodeScanPreviewView.m */,
-				94C02D0721211CD70028AB47 /* QRCodeScanViewController.h */,
-				94C02D0821211CD70028AB47 /* QRCodeScanViewController.m */,
-				94C02D0921211CD70028AB47 /* QRCodeScanViewController.xib */,
+				94C02D0D21215D340028AB47 /* CYQRCodeScanPreviewView.h */,
+				94C02D0C21215D340028AB47 /* CYQRCodeScanPreviewView.m */,
+				94C02D0721211CD70028AB47 /* CYQRCodeScanViewController.h */,
+				94C02D0821211CD70028AB47 /* CYQRCodeScanViewController.m */,
+				94C02D0921211CD70028AB47 /* CYQRCodeScanViewController.xib */,
 				944B211B2126AD1A005F2D88 /* Media.xcassets */,
 				94751061212AC43500905701 /* Localizable.strings */,
 			);
@@ -101,9 +101,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94C02CEC21211C7C0028AB47 /* QRCodeScanDemo */ = {
+		94C02CEC21211C7C0028AB47 /* CYQRCodeScanDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94C02D0321211C7D0028AB47 /* Build configuration list for PBXNativeTarget "QRCodeScanDemo" */;
+			buildConfigurationList = 94C02D0321211C7D0028AB47 /* Build configuration list for PBXNativeTarget "CYQRCodeScanDemo" */;
 			buildPhases = (
 				94C02CE921211C7C0028AB47 /* Sources */,
 				94C02CEA21211C7C0028AB47 /* Frameworks */,
@@ -113,9 +113,9 @@
 			);
 			dependencies = (
 			);
-			name = QRCodeScanDemo;
+			name = CYQRCodeScanDemo;
 			productName = QRCodeScanDemo;
-			productReference = 94C02CED21211C7C0028AB47 /* QRCodeScanDemo.app */;
+			productReference = 94C02CED21211C7C0028AB47 /* CYQRCodeScanDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 94C02CE821211C7C0028AB47 /* Build configuration list for PBXProject "QRCodeScanDemo" */;
+			buildConfigurationList = 94C02CE821211C7C0028AB47 /* Build configuration list for PBXProject "CYQRCodeScanDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -146,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94C02CEC21211C7C0028AB47 /* QRCodeScanDemo */,
+				94C02CEC21211C7C0028AB47 /* CYQRCodeScanDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -161,7 +161,7 @@
 				94C02CFD21211C7D0028AB47 /* LaunchScreen.storyboard in Resources */,
 				94C02CFA21211C7D0028AB47 /* Assets.xcassets in Resources */,
 				94C02CF821211C7C0028AB47 /* Main.storyboard in Resources */,
-				94C02D0B21211CD70028AB47 /* QRCodeScanViewController.xib in Resources */,
+				94C02D0B21211CD70028AB47 /* CYQRCodeScanViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +175,8 @@
 				94C02CF521211C7C0028AB47 /* ViewController.m in Sources */,
 				94C02D0021211C7D0028AB47 /* main.m in Sources */,
 				94C02CF221211C7C0028AB47 /* AppDelegate.m in Sources */,
-				94C02D0A21211CD70028AB47 /* QRCodeScanViewController.m in Sources */,
-				94C02D0E21215D340028AB47 /* QRCodeScanPreviewView.m in Sources */,
+				94C02D0A21211CD70028AB47 /* CYQRCodeScanViewController.m in Sources */,
+				94C02D0E21215D340028AB47 /* CYQRCodeScanPreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +361,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94C02CE821211C7C0028AB47 /* Build configuration list for PBXProject "QRCodeScanDemo" */ = {
+		94C02CE821211C7C0028AB47 /* Build configuration list for PBXProject "CYQRCodeScanDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94C02D0121211C7D0028AB47 /* Debug */,
@@ -370,7 +370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94C02D0321211C7D0028AB47 /* Build configuration list for PBXNativeTarget "QRCodeScanDemo" */ = {
+		94C02D0321211C7D0028AB47 /* Build configuration list for PBXNativeTarget "CYQRCodeScanDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94C02D0421211C7D0028AB47 /* Debug */,

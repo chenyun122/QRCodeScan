@@ -7,10 +7,10 @@
 //
 
 
-#import "QRCodeScanPreviewView.h"
+#import "CYQRCodeScanPreviewView.h"
 
 
-@interface QRCodeScanPreviewView () {
+@interface CYQRCodeScanPreviewView () {
     NSArray<CALayer *> *cornerLayers;
     CAShapeLayer *scanWindowCornerLayer;
     CALayer *barLayer;
@@ -21,7 +21,7 @@
 @end
 
 
-@implementation QRCodeScanPreviewView
+@implementation CYQRCodeScanPreviewView
 
 + (Class)layerClass {
 	return [AVCaptureVideoPreviewLayer class];
