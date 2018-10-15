@@ -30,6 +30,12 @@
 
 const static CGFloat kMinDetectionInterval = 0.3;
 
++ (instancetype)qrcodeScanViewController {
+    NSBundle *bundle = [NSBundle bundleForClass:[QRCodeScanViewController class]];
+    QRCodeScanViewController *qrcodeScanViewController = [[QRCodeScanViewController alloc] initWithNibName:@"QRCodeScanViewController" bundle:bundle];
+    return qrcodeScanViewController;
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {

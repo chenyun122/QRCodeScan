@@ -31,4 +31,6 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *flashLightButton;
 
++ (instancetype)qrcodeScanViewController;
+
 @end

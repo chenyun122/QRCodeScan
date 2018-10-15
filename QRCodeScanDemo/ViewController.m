@@ -28,7 +28,7 @@
 
 
 - (IBAction)scan:(id)sender {
-    QRCodeScanViewController *scanViewController = [[QRCodeScanViewController alloc] init];
+    QRCodeScanViewController *scanViewController = [QRCodeScanViewController qrcodeScanViewController];
     scanViewController.continuous = YES;
     scanViewController.scanInterval = 1.5;
     scanViewController.delegate = self;
