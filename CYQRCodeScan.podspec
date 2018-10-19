@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CYQRCodeScan"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "A simple QR Code scan solution"
   s.description  = <<-DESC
                     A simple QR Code scan solution with only system API and smooth animation.

@@ -191,7 +191,15 @@ const static CGFloat kMinDetectionInterval = 0.3;
 
 - (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     CVImageBufferRef imageBuf = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CIImage* frame = [CIImage imageWithCVImageBuffer: imageBuf];
+    CIImage* frame;
+    
+    if (@available(iOS 9.0,*)) {
+        frame = [CIImage imageWithCVImageBuffer: imageBuf];
+    }
+    else{
+        frame = [[CIImage alloc] initWithCVPixelBuffer:imageBuf];
+    }
+    
     CFAbsoluteTime time = CFAbsoluteTimeGetCurrent();
     if (time - lastDetectionTime >= kMinDetectionInterval) {
         lastDetectionTime = time;
